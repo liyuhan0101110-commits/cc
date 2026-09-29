@@ -1,0 +1,12 @@
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+
+// https://vite.dev/config/
+export default defineConfig(({ command }) => ({
+  // GitHub Pages project site lives at /cc/; keep local dev at /.
+  base: command === 'build' ? '/cc/' : '/',
+  plugins: [react()],
+  // 监听所有网卡，方便手机等同一局域网设备用 IP:端口 访问
+  server: { host: true, port: 5178 },
+  preview: { host: true, port: 4178 },
+}))
