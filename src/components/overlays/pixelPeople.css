@@ -1,0 +1,13 @@
+.pixel-people { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:24px; align-items:center; margin:0 0 42px; padding:20px 24px; background:#fff7d9; border:3px solid #263629; box-shadow:6px 6px 0 #263629; }
+.pixel-people__copy { min-width:0; }
+.pixel-people__kicker { font:700 12px/1.5 'Courier New',monospace; letter-spacing:.08em; margin:0 0 10px; }
+.pixel-people__speech { min-height:28px; margin:0; font-size:15px; line-height:1.7; overflow-wrap:anywhere; }
+.pixel-people__party { display:flex; justify-content:flex-end; gap:10px; }
+.pixel-people__person { display:flex; flex-direction:column; align-items:center; gap:5px; min-width:94px; padding:8px 6px; background:#fffdf1; border:2px solid #263629; box-shadow:3px 3px 0 #263629; font-size:12px!important; font-weight:700!important; }
+.pixel-people__person:hover,.pixel-people__person[data-active] { background:var(--person-color); transform:translate(-2px,-2px); box-shadow:5px 5px 0 #263629; }
+.pixel-people__sprite { width:48px; height:56px; display:block; image-rendering:pixelated; transform-origin:center bottom; }
+.pixel-people__sprite--hop { animation:pixel-hop .46s steps(3,end); }
+@keyframes pixel-hop { 0%,100% { transform:translateY(0) } 38% { transform:translateY(-12px) } 72% { transform:translateY(-4px) } }
+@media(max-width:700px) { .pixel-people { grid-template-columns:1fr; gap:18px; padding:18px; } .pixel-people__party { justify-content:space-between; } .pixel-people__person { min-width:0; width:32%; } }
+@media(max-width:360px) { .pixel-people__person { font-size:11px!important; } .pixel-people__sprite { width:40px; height:47px; } }
+@media(prefers-reduced-motion:reduce) { .pixel-people__sprite--hop { animation:none; } }
